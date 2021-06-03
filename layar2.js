@@ -1,12 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native'
 
-const layar2 = () => {
+function layar2 ({navigation}) {
     return (
       <View style={styles.container}>
-        <Image
-        style={styles.img}
-        source={require('./src/gambar/bi.png')}/>
+      <TouchableOpacity
+      onPress={() =>navigation.navigate('satu')}>
+      <Image
+      style={styles.img}
+      source={require('./src/gambar/bi.png')}/>
+      </TouchableOpacity>
         <Image
         style={styles.img2}
         source={require('./src/gambar/a.png')}/>
@@ -45,7 +48,24 @@ const layar2 = () => {
           },
         ]}/>
         </TouchableOpacity>
-        </View>
+        <Text style={styles.text5}>Members</Text>
+        <Image style={styles.plus}
+        source={require('./src/gambar/plus.png')}/>
+        <Image style={styles.member1}
+        source={require('./src/gambar/member1.png')}/>
+        <Image style={styles.member2}
+        source={require('./src/gambar/member2.png')}/>
+        <Image style={styles.member3}
+        source={require('./src/gambar/member3.png')}/>
+        <Image style={styles.member4}
+        source={require('./src/gambar/member4.png')}/>
+        <TouchableOpacity
+        style={styles.button2}>
+          <Text style={styles.text6}>
+            Book it!
+          </Text>
+        </TouchableOpacity>
+      </View>
     )
 }
 export default layar2
@@ -92,6 +112,7 @@ const styles = StyleSheet.create({
         color:'white',
     },
     button:{
+        position: 'relative',
         marginTop:30,
         backgroundColor:'white',
         height:600,
@@ -122,4 +143,59 @@ const styles = StyleSheet.create({
         marginLeft:110,
         color:'grey',
       },
+      text5:{
+        fontSize:25,
+        color:'black',
+        marginLeft:30,
+        marginTop:-320,
+      },
+      plus:{
+        position:'relative',
+        width:35,
+        height:35,
+        marginLeft:30,
+        marginTop:35,
+      },
+      member1:{
+        position:'relative',
+        width:35,
+        height:35,
+        marginLeft:80,
+        marginTop:-35,
+      },
+      member2:{
+        position:'relative',
+        width:35,
+        height:35,
+        marginLeft:130,
+        marginTop:-35,
+      },
+      member3:{
+        position:'relative',
+        width:35,
+        height:35,
+        marginLeft:180,
+        marginTop:-35,
+      },
+      member4:{
+        position:'relative',
+        width:35,
+        height:35,
+        marginLeft:230,
+        marginTop:-35,
+      },
+      button2:{
+        backgroundColor:'#F1A737',
+        width:200,
+        height:50,
+        marginTop:40,
+        marginLeft:80,
+        borderRadius:12,
+      },
+      text6:{
+        color:'white',
+        fontSize:15,
+        marginLeft:80,
+        marginTop:13,
+      }
 })
